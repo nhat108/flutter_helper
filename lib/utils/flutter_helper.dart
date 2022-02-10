@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:math' as math;
 
+import 'package:money_formatter/money_formatter.dart';
+
 class FlutterHelper {
   static bool firstTimeOpenApp = true;
 
@@ -234,5 +236,14 @@ class FlutterHelper {
     }
     final mbit = (bitrate / 1000000).floor();
     return "~$mbit MBit/s";
+  }
+
+  static String formatMoney(double value) {
+    try {
+      MoneyFormatterOutput fo = MoneyFormatter(amount: value).output;
+      return fo.nonSymbol;
+    } catch (e) {
+      return '?';
+    }
   }
 }

@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   shimmer: ^2.0.0
   intl: ^0.17.0
+  money_formatter: ^0.0.3
 
 
   cupertino_icons: ^1.0.2
