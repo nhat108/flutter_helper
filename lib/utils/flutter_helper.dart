@@ -243,7 +243,7 @@ class FlutterHelper {
       MoneyFormatterOutput fo = MoneyFormatter(amount: value).output;
       return fo.nonSymbol;
     } catch (e) {
-      return '?';
+      return value.toStringAsFixed(2);
     }
   }
 }
