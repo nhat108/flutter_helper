@@ -54,6 +54,9 @@ extension StringX on String {
 
   /// Example: Nate Diaz -> return {'first_name':'Nate', 'last_name':'Diaz'}
   Map<String, dynamic> getFristNameLastName() {
+    if (isEmpty) {
+      return {'first_name': '', 'last_name': ''};
+    }
     var fullNames = toString().trim().split(' ');
     var firstName = "";
     var lastName = "";
